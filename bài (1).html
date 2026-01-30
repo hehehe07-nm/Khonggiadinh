@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Không gia đình – Hector Malot</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== COLOR PALETTE ===== */
+    :root {
+      --paper: #F4F1EA;
+      --olive: #7A8F5A;
+      --gold: #C9B37E;
+      --brown: #5A3E2B;
+      --text: #3E2A1A;
+    }
+
+    /* ===== BASE ===== */
+    html {
+      font-family: 'Libre Baskerville', serif;
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.9;
+      letter-spacing: 0.3px;
+    }
+
+    body {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #F3EAD8;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background-color: #5A3E2B;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #F4F1EA;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #C9B37E;
+      color: #3E2A1A;
+    }
+
+    /* ===== HEADER / COVER ===== */
+    .book-cover-section {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(180deg, #FAF8F2, #F4F1EA);
+      border: 1px solid #ddd4bd;
+      margin-bottom: 50px;
+    }
+
+    .book-cover-section img {
+      width: 200px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      filter: sepia(10%);
+      margin-bottom: 25px;
+    }
+
+    .book-cover-section h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    .book-cover-section h3 {
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--brown);
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-style: italic;
+      color: #7A6A58;
+    }
+
+    /* ===== SECTION ===== */
+    section {
+      padding: 35px 30px;
+      margin-bottom: 40px;
+      border-left: 4px solid var(--olive);
+      background-color: #FAF8F2;
+    }
+
+    section h2 {
+      font-size: 2.1rem;
+      margin-bottom: 18px;
+      color: var(--olive);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    section p {
+      font-size: 1.08rem;
+      margin-bottom: 18px;
+      text-indent: 28px;
+      text-align: justify;
+    }
+
+    section img {
+      display: block;
+      width: 70%;
+      max-width: 400px;
+      margin: 20px auto;
+      filter: sepia(15%);
+    }
+
+    /* ===== AUTHOR ===== */
+    .author {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      border-left: 4px solid var(--gold);
+    }
+
+    .author img {
+      width: 160px;
+      filter: grayscale(100%);
+    }
+    /* ===== HOVER LIFT EFFECT ===== */
+section,
+.book-cover-section,
+.author,
+blockquote {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+section:hover,
+.book-cover-section:hover,
+.author:hover,
+blockquote:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+    /* ===== QUOTE ===== */
+    blockquote {
+      margin-top: 25px;
+      padding: 25px 30px;
+      border-left: 4px solid var(--olive);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      background-color: #E6F0E6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #F4F1EA;
+      padding: 20px 10px;
+      background-color: #5A3E2B;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .author {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    /* ===== IMAGE FLOAT LEFT ===== */
+.img-left {
+  float: left;
+  width: 220px;
+  max-width: 45%;
+  margin: 5px 25px 15px 0;
+  border: 2px solid #C9B37E;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  filter: sepia(12%);
+  border-radius: 4px;
+}
+
+/* Clear float sau đoạn có ảnh */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* ===== VIDEO STYLE (SMALLER) ===== */
+.video-wrapper {
+  width: 100%;
+  max-width: 520px;      /* nhỏ hơn nữa */
+  margin: 25px auto;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-wrapper video,
+.video-wrapper iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+  <ul>
+    <li><a href="#gioithieu">Giới thiệu</a></li>
+    <li><a href="#tomtat">Tóm tắt</a></li>
+    <li><a href="#giatri">Giá trị</a></li>
+    <li><a href="#trichdan">Trích dẫn</a></li>
+    <li><a href="#audio">Audio</a></li>
+    <li><a href="#video">Video</a></li>
+  </ul>
+</nav>
+
+  <header class="book-cover-section">
+    <img src="ảnh bìa.jpg" alt="Bìa sách Không gia đình">
+    <h1>Không gia đình</h1>
+    <h3>Hector Malot</h3>
+    <p class="subtitle">Tác phẩm văn học nhân văn kinh điển của Pháp</p>
+  </header>
+  <div class="video-wrapper">
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+</div>
+  <section class="author">
+    <img src="tác giả.jpg" alt="Hector Malot">
+    <div>
+      <h3>Hector Malot (1830 – 1907)</h3>
+      <p>Hector Malot là nhà văn Pháp nổi tiếng với những tác phẩm viết cho thiếu nhi và thanh thiếu niên, giàu tính nhân văn.</p>
+    </div>
+  </section>
+  <section id="gioithieu">
+    <h2>1. Giới thiệu tác phẩm</h2>
+    <p><b>Không gia đình</b> là tiểu thuyết nổi tiếng của nhà văn Pháp Hector Malot, được xuất bản vào năm 1878. Tác phẩm kể về số phận của những đứa trẻ bất hạnh trong xã hội châu Âu thế kỉ XIX, đồng thời phản ánh hiện thực cuộc sống đầy khắc nghiệt của tầng lớp nghèo khổ lúc bấy giờ. Với cốt truyện giàu cảm xúc, nhân vật gần gũi và ngôn ngữ giản dị, Không gia đình không chỉ là một câu chuyện dành cho thiếu nhi mà còn mang giá trị nhân văn sâu sắc đối với mọi lứa tuổi. Qua hành trình lưu lạc của cậu bé Rémi, tác giả gửi gắm thông điệp về tình yêu thương, lòng nhân ái và ý chí vượt lên nghịch cảnh để tìm kiếm hạnh phúc và một mái ấm gia đình thực sự.</p>
+  </section>
+
+  <section id="tomtat">
+    <h2>2. Tóm tắt nội dung</h2>
+    <p>Không gia đình là câu chuyện cảm động kể về cuộc đời nhiều bất hạnh nhưng đầy nghị lực của cậu bé Rémi – một đứa trẻ mồ côi, không biết cha mẹ ruột là ai. Rémi được một gia đình nông dân nghèo nhận nuôi từ nhỏ. Tuy nhiên, vì hoàn cảnh khó khăn, cậu bị người cha nuôi bán cho cụ Vitalis – một nghệ sĩ lang thang dẫn theo gánh xiếc nhỏ gồm những con vật được huấn luyện.</p>
+    <br>
+    <p>Từ đây, Rémi bắt đầu cuộc sống phiêu bạt khắp các miền nước Pháp. Cậu theo cụ Vitalis biểu diễn để kiếm sống, phải chịu đói rét, rét mướt, ngủ ngoài đường và đối mặt với sự khắc nghiệt của cuộc đời. Dù còn rất nhỏ, Rémi luôn chăm chỉ lao động, ngoan ngoãn, giàu lòng yêu thương và biết quan tâm đến người khác. Cụ Vitalis không chỉ là người thầy dạy nghề mà còn là người cha tinh thần, dạy Rémi cách sống trung thực, tự trọng và không bao giờ bỏ cuộc.</p>
+    <br>
+    <p>Sau cái chết của cụ Vitalis, Rémi tiếp tục hành trình một mình, trải qua nhiều biến cố đau buồn nhưng cũng gặp được những con người tốt bụng sẵn sàng giúp đỡ cậu. Nhờ nghị lực sống mạnh mẽ và tấm lòng nhân hậu, Rémi từng bước vượt qua khó khăn, khám phá ra thân phận thật sự của mình và cuối cùng tìm lại được gia đình ruột thịt.</p>
+    <br>
+    <p>Trải qua nhiều khó khăn, mất mát và thử thách, Rémi học được cách sống tự lập, nhân ái và không khuất phục số phận.</p>
+  </section>
+
+  <section id="giatri">
+    <h2>3. Giá trị nhân văn</h2>
+    <p>Tác phẩm Không gia đình ca ngợi tình người, lòng nhân ái và ý chí vươn lên trong nghịch cảnh, đồng thời gửi gắm thông điệp rằng: dù cuộc sống có khắc nghiệt đến đâu, chỉ cần con người không mất đi niềm tin và tình yêu thương thì hạnh phúc vẫn luôn chờ đợi ở phía trước.</p>
+  </section>
+
+  <section id="trichdan">
+    <h2>4. Trích dẫn hay</h2>
+    <blockquote>“Khi người ta có trái tim nhân hậu thì dù nghèo khổ, người ta vẫn giàu có hơn tất cả.”</blockquote>
+  </section>
+
+  <footer>
+    © 2025 – Website tác phẩm văn học<br>
+    Thân Thùy Linh – 12A1 <br>
+    Trường: THCS-THPT Minh Hòa <br>
+    Gmail: linhthuy2524681100@gmail.com
+  </footer>
+
+</body>
+</html>
